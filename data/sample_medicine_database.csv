@@ -1,0 +1,33 @@
+medicine_name,active_salt,category,common_dosage
+Paracetamol,Acetaminophen,Analgesic / Antipyretic,500mg
+Ibuprofen,Ibuprofen,NSAID / Anti-inflammatory,400mg
+Aspirin,Acetylsalicylic Acid,NSAID / Antiplatelet,75-325mg
+Amoxicillin,Amoxicillin,Antibiotic,250-500mg
+Azithromycin,Azithromycin,Antibiotic,250-500mg
+Ciprofloxacin,Ciprofloxacin,Antibiotic,500mg
+Metformin,Metformin Hydrochloride,Antidiabetic,500-1000mg
+Glimepiride,Glimepiride,Antidiabetic,1-4mg
+Insulin,Insulin,Antidiabetic,Variable IU
+Amlodipine,Amlodipine Besylate,Antihypertensive,5-10mg
+Losartan,Losartan Potassium,Antihypertensive,50-100mg
+Atenolol,Atenolol,Beta Blocker,25-100mg
+Metoprolol,Metoprolol Tartrate,Beta Blocker,50-200mg
+Atorvastatin,Atorvastatin Calcium,Statin,10-80mg
+Rosuvastatin,Rosuvastatin Calcium,Statin,5-40mg
+Omeprazole,Omeprazole,Proton Pump Inhibitor,20-40mg
+Pantoprazole,Pantoprazole Sodium,Proton Pump Inhibitor,40mg
+Ranitidine,Ranitidine Hydrochloride,H2 Blocker,150mg
+Cetirizine,Cetirizine Hydrochloride,Antihistamine,10mg
+Loratadine,Loratadine,Antihistamine,10mg
+Montelukast,Montelukast Sodium,Leukotriene Inhibitor,10mg
+Salbutamol,Salbutamol Sulfate,Bronchodilator,2-4mg
+Prednisolone,Prednisolone,Corticosteroid,5-60mg
+Warfarin,Warfarin Sodium,Anticoagulant,2-10mg
+Clopidogrel,Clopidogrel Bisulfate,Antiplatelet,75mg
+Diazepam,Diazepam,Benzodiazepine,2-10mg
+Sertraline,Sertraline Hydrochloride,SSRI / Antidepressant,50-200mg
+Fluoxetine,Fluoxetine Hydrochloride,SSRI / Antidepressant,20-80mg
+Gabapentin,Gabapentin,Anticonvulsant,300-3600mg
+Tramadol,Tramadol Hydrochloride,Opioid Analgesic,50-100mg
+Methotrexate,Methotrexate,Immunosuppressant,7.5-25mg weekly
+Levothyroxine,Levothyroxine Sodium,Thyroid Hormone,25-200mcg

@@ -1,0 +1,470 @@
+[
+  {
+    "condition": "Common Cold / Flu",
+    "symptoms": ["fever", "headache", "runny nose", "sore throat", "cough", "body ache", "fatigue", "sneezing"],
+    "causes": [
+      "Viral infection (rhinovirus, influenza)",
+      "Weakened immunity",
+      "Seasonal changes",
+      "Close contact with infected individuals"
+    ],
+    "home_remedies": [
+      "Rest and adequate sleep",
+      "Warm fluids (soup, tea, warm water with honey)",
+      "Steam inhalation",
+      "Saltwater gargle for sore throat",
+      "Paracetamol for fever (if appropriate)"
+    ],
+    "lifestyle_advice": [
+      "Wash hands frequently",
+      "Maintain good hygiene",
+      "Eat a balanced diet rich in Vitamin C",
+      "Stay hydrated",
+      "Avoid close contact when symptomatic"
+    ],
+    "warning_signs": [
+      "Fever persisting beyond 3 days",
+      "Difficulty breathing",
+      "Chest pain",
+      "Severe headache with stiff neck"
+    ]
+  },
+  {
+    "condition": "Migraine",
+    "symptoms": ["severe headache", "headache", "nausea", "sensitivity to light", "sensitivity to sound", "visual disturbances", "throbbing pain"],
+    "causes": [
+      "Stress and anxiety",
+      "Hormonal changes",
+      "Certain foods (cheese, chocolate, caffeine)",
+      "Irregular sleep patterns",
+      "Genetic predisposition"
+    ],
+    "home_remedies": [
+      "Rest in a dark, quiet room",
+      "Apply cold compress to forehead",
+      "Stay hydrated",
+      "Peppermint or lavender oil (aromatherapy)",
+      "Caffeine in small amounts may help"
+    ],
+    "lifestyle_advice": [
+      "Maintain regular sleep schedule",
+      "Identify and avoid personal triggers",
+      "Exercise regularly",
+      "Practice stress management (yoga, meditation)",
+      "Keep a headache diary"
+    ],
+    "warning_signs": [
+      "Sudden severe headache (thunderclap)",
+      "Headache with fever and stiff neck",
+      "Vision loss",
+      "Numbness or weakness on one side"
+    ]
+  },
+  {
+    "condition": "Gastroenteritis (Stomach Flu)",
+    "symptoms": ["nausea", "vomiting", "diarrhea", "stomach pain", "abdominal cramps", "fever", "loss of appetite"],
+    "causes": [
+      "Viral infection (norovirus, rotavirus)",
+      "Bacterial contamination",
+      "Contaminated food or water",
+      "Poor hand hygiene"
+    ],
+    "home_remedies": [
+      "Oral rehydration solution (ORS)",
+      "BRAT diet (banana, rice, applesauce, toast)",
+      "Avoid dairy and fatty foods",
+      "Ginger tea for nausea",
+      "Small frequent sips of clear fluids"
+    ],
+    "lifestyle_advice": [
+      "Wash hands before eating",
+      "Cook food thoroughly",
+      "Store food at proper temperatures",
+      "Avoid sharing utensils when sick"
+    ],
+    "warning_signs": [
+      "Signs of severe dehydration (dry mouth, no urination)",
+      "Blood in stool or vomit",
+      "High fever (>39°C / 102°F)",
+      "Symptoms lasting more than 3 days"
+    ]
+  },
+  {
+    "condition": "Hypertension (High Blood Pressure)",
+    "symptoms": ["headache", "dizziness", "blurred vision", "chest pain", "shortness of breath", "nosebleed"],
+    "causes": [
+      "Sedentary lifestyle",
+      "High sodium diet",
+      "Obesity",
+      "Chronic stress",
+      "Genetic factors",
+      "Smoking and alcohol"
+    ],
+    "home_remedies": [
+      "Reduce salt intake",
+      "Regular physical activity (30 mins/day)",
+      "DASH diet (fruits, vegetables, whole grains)",
+      "Potassium-rich foods (bananas, spinach)",
+      "Limit caffeine and alcohol"
+    ],
+    "lifestyle_advice": [
+      "Monitor blood pressure regularly",
+      "Maintain healthy weight",
+      "Manage stress through relaxation techniques",
+      "Quit smoking",
+      "Limit alcohol consumption"
+    ],
+    "warning_signs": [
+      "Blood pressure above 180/120 mmHg",
+      "Severe headache with confusion",
+      "Chest pain or difficulty breathing",
+      "Vision changes"
+    ]
+  },
+  {
+    "condition": "Type 2 Diabetes",
+    "symptoms": ["frequent urination", "excessive thirst", "fatigue", "blurred vision", "slow wound healing", "weight loss", "numbness in hands"],
+    "causes": [
+      "Insulin resistance",
+      "Obesity and sedentary lifestyle",
+      "Genetic predisposition",
+      "Poor diet (high sugar, processed foods)",
+      "Age (risk increases after 45)"
+    ],
+    "home_remedies": [
+      "Balanced diet with low glycemic index foods",
+      "Regular exercise (walking, swimming)",
+      "Cinnamon tea (may help regulate blood sugar)",
+      "Fenugreek seeds soaked overnight",
+      "Portion control"
+    ],
+    "lifestyle_advice": [
+      "Monitor blood sugar regularly",
+      "Take medications as prescribed",
+      "Maintain healthy weight",
+      "Regular foot care and eye examinations",
+      "Avoid sugary beverages"
+    ],
+    "warning_signs": [
+      "Blood sugar above 300 mg/dL",
+      "Fruity breath odor (possible DKA)",
+      "Confusion or loss of consciousness",
+      "Persistent vomiting"
+    ]
+  },
+  {
+    "condition": "Anxiety Disorder",
+    "symptoms": ["anxiety", "restlessness", "rapid heartbeat", "sweating", "trembling", "difficulty concentrating", "insomnia", "irritability"],
+    "causes": [
+      "Chronic stress",
+      "Traumatic experiences",
+      "Genetic predisposition",
+      "Brain chemistry imbalance",
+      "Excessive caffeine or stimulant use"
+    ],
+    "home_remedies": [
+      "Deep breathing exercises (4-7-8 technique)",
+      "Progressive muscle relaxation",
+      "Chamomile or lavender tea",
+      "Regular physical exercise",
+      "Journaling thoughts and feelings"
+    ],
+    "lifestyle_advice": [
+      "Maintain regular sleep schedule",
+      "Limit caffeine and alcohol",
+      "Practice mindfulness meditation",
+      "Stay connected with supportive people",
+      "Consider professional counselling"
+    ],
+    "warning_signs": [
+      "Panic attacks lasting more than 20 minutes",
+      "Thoughts of self-harm",
+      "Inability to perform daily activities",
+      "Substance abuse to cope"
+    ]
+  },
+  {
+    "condition": "Allergic Rhinitis",
+    "symptoms": ["sneezing", "runny nose", "itchy eyes", "nasal congestion", "watery eyes", "postnasal drip"],
+    "causes": [
+      "Pollen",
+      "Dust mites",
+      "Pet dander",
+      "Mold spores",
+      "Certain foods"
+    ],
+    "home_remedies": [
+      "Saline nasal rinse",
+      "Steam inhalation",
+      "Local honey (may help with pollen allergies)",
+      "Keep windows closed during high pollen days",
+      "Use air purifiers"
+    ],
+    "lifestyle_advice": [
+      "Identify and avoid allergens",
+      "Shower after outdoor activities",
+      "Use dust-proof pillow covers",
+      "Keep pets out of bedroom",
+      "Take antihistamines as directed"
+    ],
+    "warning_signs": [
+      "Difficulty breathing or wheezing",
+      "Swelling of face or throat",
+      "Symptoms not responding to treatment",
+      "Recurrent sinus infections"
+    ]
+  },
+  {
+    "condition": "Urinary Tract Infection (UTI)",
+    "symptoms": ["burning urination", "frequent urination", "cloudy urine", "lower abdominal pain", "fever", "back pain"],
+    "causes": [
+      "Bacterial infection (E. coli)",
+      "Poor hygiene",
+      "Dehydration",
+      "Holding urine for long periods",
+      "Sexual activity"
+    ],
+    "home_remedies": [
+      "Drink plenty of water",
+      "Cranberry juice (unsweetened)",
+      "Avoid caffeine and alcohol",
+      "Use heating pad for abdominal pain",
+      "Probiotics"
+    ],
+    "lifestyle_advice": [
+      "Urinate frequently and completely",
+      "Wipe front to back",
+      "Stay well hydrated",
+      "Urinate after sexual activity",
+      "Wear breathable cotton underwear"
+    ],
+    "warning_signs": [
+      "Blood in urine",
+      "High fever with chills",
+      "Severe back or flank pain",
+      "Symptoms worsening despite treatment"
+    ]
+  },
+  {
+    "condition": "Asthma",
+    "symptoms": ["wheezing", "shortness of breath", "chest tightness", "cough", "difficulty breathing at night"],
+    "causes": [
+      "Allergens (dust, pollen, pet dander)",
+      "Respiratory infections",
+      "Exercise",
+      "Cold air",
+      "Air pollution",
+      "Genetic predisposition"
+    ],
+    "home_remedies": [
+      "Breathing exercises (pursed lip breathing)",
+      "Steam inhalation",
+      "Ginger and honey tea",
+      "Sit upright during an attack",
+      "Keep rescue inhaler accessible"
+    ],
+    "lifestyle_advice": [
+      "Follow asthma action plan",
+      "Avoid known triggers",
+      "Use inhaler as prescribed",
+      "Regular exercise (with warm-up)",
+      "Annual flu vaccination"
+    ],
+    "warning_signs": [
+      "Rescue inhaler not providing relief",
+      "Unable to speak full sentences",
+      "Blue lips or fingernails",
+      "Peak flow below 50% of personal best"
+    ]
+  },
+  {
+    "condition": "Iron Deficiency Anemia",
+    "symptoms": ["fatigue", "weakness", "pale skin", "dizziness", "cold hands", "brittle nails", "shortness of breath"],
+    "causes": [
+      "Inadequate iron intake",
+      "Heavy menstrual periods",
+      "Chronic blood loss",
+      "Poor absorption (celiac disease)",
+      "Pregnancy"
+    ],
+    "home_remedies": [
+      "Iron-rich foods (spinach, lentils, red meat)",
+      "Vitamin C with meals (enhances iron absorption)",
+      "Cook in cast iron pans",
+      "Avoid tea/coffee with meals (reduces absorption)",
+      "Beetroot and pomegranate juice"
+    ],
+    "lifestyle_advice": [
+      "Get regular blood tests",
+      "Take iron supplements as prescribed",
+      "Eat balanced diet",
+      "Address underlying causes",
+      "Combine iron-rich foods with Vitamin C sources"
+    ],
+    "warning_signs": [
+      "Severe fatigue affecting daily life",
+      "Rapid heartbeat or palpitations",
+      "Shortness of breath at rest",
+      "Unusual cravings (ice, dirt – pica)"
+    ]
+  },
+  {
+    "condition": "Acid Reflux (GERD)",
+    "symptoms": ["heartburn", "acid taste", "chest pain", "difficulty swallowing", "regurgitation", "burping", "nausea"],
+    "causes": [
+      "Weakened lower esophageal sphincter",
+      "Obesity",
+      "Smoking",
+      "Spicy or fatty foods",
+      "Eating late at night",
+      "Certain medications"
+    ],
+    "home_remedies": [
+      "Elevate head of bed (6-8 inches)",
+      "Eat smaller, more frequent meals",
+      "Avoid eating 2-3 hours before bed",
+      "Chew gum (stimulates saliva)",
+      "Ginger tea"
+    ],
+    "lifestyle_advice": [
+      "Lose weight if overweight",
+      "Avoid trigger foods (citrus, tomato, spicy)",
+      "Quit smoking",
+      "Wear loose-fitting clothes",
+      "Manage stress"
+    ],
+    "warning_signs": [
+      "Difficulty swallowing worsening",
+      "Persistent vomiting",
+      "Unexplained weight loss",
+      "Black stool (possible GI bleeding)"
+    ]
+  },
+  {
+    "condition": "Lower Back Pain",
+    "symptoms": ["back pain", "lower back pain", "stiffness", "muscle spasm", "difficulty standing", "radiating leg pain"],
+    "causes": [
+      "Poor posture",
+      "Muscle strain",
+      "Herniated disc",
+      "Sedentary lifestyle",
+      "Heavy lifting",
+      "Degenerative changes"
+    ],
+    "home_remedies": [
+      "Ice pack for first 48 hours, then heat",
+      "Gentle stretching exercises",
+      "Over-the-counter pain relief",
+      "Maintain normal activities as tolerable",
+      "Epsom salt bath"
+    ],
+    "lifestyle_advice": [
+      "Maintain good posture",
+      "Strengthen core muscles",
+      "Use ergonomic chair",
+      "Lift with legs, not back",
+      "Regular physical activity"
+    ],
+    "warning_signs": [
+      "Numbness in legs or groin area",
+      "Loss of bladder/bowel control",
+      "Pain after a serious fall or injury",
+      "Fever with back pain"
+    ]
+  },
+  {
+    "condition": "Conjunctivitis (Pink Eye)",
+    "symptoms": ["red eyes", "itchy eyes", "eye discharge", "watery eyes", "swollen eyelids", "burning sensation in eyes"],
+    "causes": [
+      "Viral infection",
+      "Bacterial infection",
+      "Allergies",
+      "Chemical irritation",
+      "Contact lens irritation"
+    ],
+    "home_remedies": [
+      "Warm compress on closed eyes",
+      "Clean eye discharge with damp cloth",
+      "Artificial tears for lubrication",
+      "Avoid touching or rubbing eyes",
+      "Remove contact lenses"
+    ],
+    "lifestyle_advice": [
+      "Wash hands frequently",
+      "Don't share towels or pillowcases",
+      "Replace eye cosmetics",
+      "Clean contact lenses properly",
+      "Avoid swimming pools when infected"
+    ],
+    "warning_signs": [
+      "Severe eye pain",
+      "Vision changes",
+      "Sensitivity to light",
+      "Symptoms not improving after 3 days"
+    ]
+  },
+  {
+    "condition": "Insomnia",
+    "symptoms": ["difficulty sleeping", "insomnia", "waking up frequently", "daytime fatigue", "irritability", "difficulty concentrating"],
+    "causes": [
+      "Stress and anxiety",
+      "Irregular sleep schedule",
+      "Screen time before bed",
+      "Caffeine or alcohol",
+      "Medical conditions",
+      "Medications"
+    ],
+    "home_remedies": [
+      "Chamomile tea before bed",
+      "Warm milk with turmeric",
+      "Lavender aromatherapy",
+      "Reading instead of screen time",
+      "Progressive muscle relaxation"
+    ],
+    "lifestyle_advice": [
+      "Consistent sleep and wake times",
+      "Keep bedroom cool and dark",
+      "No screens 1 hour before bed",
+      "Limit caffeine after 2 PM",
+      "Regular exercise (not close to bedtime)"
+    ],
+    "warning_signs": [
+      "Insomnia lasting more than 3 months",
+      "Excessive daytime sleepiness affecting safety",
+      "Snoring with breathing pauses (sleep apnea)",
+      "Dependency on sleep aids"
+    ]
+  },
+  {
+    "condition": "Skin Rash / Dermatitis",
+    "symptoms": ["skin rash", "itching", "redness", "dry skin", "swelling", "blisters", "flaky skin"],
+    "causes": [
+      "Contact with allergens or irritants",
+      "Eczema (atopic dermatitis)",
+      "Fungal infection",
+      "Stress",
+      "Medication side effects",
+      "Autoimmune conditions"
+    ],
+    "home_remedies": [
+      "Moisturize with fragrance-free lotion",
+      "Oatmeal bath for itching",
+      "Aloe vera gel",
+      "Cold compress for inflammation",
+      "Coconut oil for dry patches"
+    ],
+    "lifestyle_advice": [
+      "Identify and avoid triggers",
+      "Use gentle, fragrance-free products",
+      "Wear soft, breathable fabrics",
+      "Keep nails short to prevent scratching",
+      "Stay hydrated"
+    ],
+    "warning_signs": [
+      "Rapidly spreading rash",
+      "Rash with fever",
+      "Signs of infection (pus, warmth, red streaks)",
+      "Rash not responding to over-the-counter treatment"
+    ]
+  }
+]

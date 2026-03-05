@@ -1,0 +1,21 @@
+drug_1,drug_2,severity,description
+Aspirin,Warfarin,HIGH,Increased risk of bleeding – both affect blood clotting
+Aspirin,Ibuprofen,MEDIUM,NSAIDs together increase risk of GI bleeding and reduce Aspirin effectiveness
+Warfarin,Ibuprofen,HIGH,Increased anticoagulant effect and risk of serious bleeding
+Metformin,Insulin,MEDIUM,Combined use may cause severe hypoglycemia – dose adjustment needed
+Atenolol,Amlodipine,MEDIUM,Excessive lowering of blood pressure and heart rate
+Losartan,Atorvastatin,LOW,Mild interaction – monitor kidney function
+Ciprofloxacin,Warfarin,HIGH,Ciprofloxacin increases Warfarin levels significantly – bleeding risk
+Omeprazole,Clopidogrel,HIGH,Omeprazole reduces Clopidogrel effectiveness – increases cardiac event risk
+Sertraline,Tramadol,HIGH,Risk of serotonin syndrome – potentially life-threatening
+Fluoxetine,Tramadol,HIGH,Risk of serotonin syndrome – combined serotonergic activity
+Aspirin,Clopidogrel,MEDIUM,Increased bleeding risk when used together without indication
+Metoprolol,Salbutamol,MEDIUM,Beta-blockers can reduce bronchodilator effectiveness
+Diazepam,Tramadol,HIGH,CNS depression – excessive sedation and respiratory depression risk
+Prednisolone,Ibuprofen,MEDIUM,Increased risk of gastrointestinal ulceration and bleeding
+Methotrexate,Ibuprofen,HIGH,NSAIDs reduce Methotrexate clearance – risk of toxicity
+Warfarin,Paracetamol,LOW,High-dose Paracetamol may slightly increase INR – monitor if regular use
+Atorvastatin,Azithromycin,LOW,Slight increase in statin levels – rare risk of muscle damage
+Gabapentin,Tramadol,MEDIUM,Increased CNS depression – drowsiness and dizziness
+Levothyroxine,Omeprazole,LOW,Omeprazole may reduce Levothyroxine absorption – take separately
+Fluoxetine,Diazepam,MEDIUM,Fluoxetine increases Diazepam levels – enhanced sedation

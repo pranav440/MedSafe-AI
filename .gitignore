@@ -1,0 +1,35 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs and databases
+*.log
+api_log.txt
+flask_log.txt
+sim_log.txt
+simulator_log.txt
+*.db
+*.sqlite3
+
+# Node modules
+node_modules/
+medsafe-insight-main/node_modules/
+medsafe-insight-main/dist/
+npm-debug.log
+yarn-error.log
+
+# VS Code / IDEs
+.vscode/
+.idea/
+*.swp
+.DS_Store
