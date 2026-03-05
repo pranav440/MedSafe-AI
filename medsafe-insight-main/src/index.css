@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 25% 96%;
+    --foreground: 215 25% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 12%;
+    --primary: 210 75% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 18% 90%;
+    --secondary-foreground: 215 25% 15%;
+    --muted: 210 18% 92%;
+    --muted-foreground: 215 12% 40%;
+    --accent: 170 55% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 25% 85%;
+    --input: 214 25% 85%;
+    --ring: 210 75% 45%;
+    --radius: 0.75rem;
+
+    --severity-low: 142 71% 40%;
+    --severity-medium: 40 90% 45%;
+    --severity-high: 0 72% 50%;
+    --chart-blue: 210 75% 50%;
+    --chart-teal: 170 55% 45%;
+    --chart-green: 142 60% 40%;
+    --chart-orange: 25 90% 50%;
+    --chart-red: 0 72% 50%;
+
+    --sidebar-background: 210 20% 98%;
+    --sidebar-foreground: 215 20% 25%;
+    --sidebar-primary: 210 75% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 18% 93%;
+    --sidebar-accent-foreground: 215 25% 12%;
+    --sidebar-border: 214 25% 88%;
+    --sidebar-ring: 210 75% 45%;
+  }
+
+  .dark {
+    --background: 220 25% 7%;
+    --foreground: 210 30% 96%;
+    --card: 220 22% 11%;
+    --card-foreground: 210 30% 96%;
+    --popover: 220 22% 11%;
+    --popover-foreground: 210 30% 96%;
+    --primary: 210 80% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 18% 18%;
+    --secondary-foreground: 210 25% 92%;
+    --muted: 220 18% 15%;
+    --muted-foreground: 215 15% 65%;
+    --accent: 170 55% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 18% 22%;
+    --input: 220 18% 22%;
+    --ring: 210 80% 55%;
+
+    --severity-low: 142 71% 50%;
+    --severity-medium: 42 95% 55%;
+    --severity-high: 0 72% 56%;
+    --chart-blue: 210 80% 62%;
+    --chart-teal: 170 60% 55%;
+    --chart-green: 142 70% 52%;
+    --chart-orange: 25 95% 60%;
+    --chart-red: 0 72% 58%;
+
+    --sidebar-background: 220 25% 9%;
+    --sidebar-foreground: 210 20% 88%;
+    --sidebar-primary: 210 80% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 18% 16%;
+    --sidebar-accent-foreground: 210 25% 95%;
+    --sidebar-border: 220 18% 18%;
+    --sidebar-ring: 210 80% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .severity-low {
+    color: hsl(var(--severity-low));
+    background-color: hsl(var(--severity-low) / 0.12);
+    border-color: hsl(var(--severity-low) / 0.3);
+  }
+  .severity-medium {
+    color: hsl(var(--severity-medium));
+    background-color: hsl(var(--severity-medium) / 0.12);
+    border-color: hsl(var(--severity-medium) / 0.3);
+  }
+  .severity-high {
+    color: hsl(var(--severity-high));
+    background-color: hsl(var(--severity-high) / 0.12);
+    border-color: hsl(var(--severity-high) / 0.3);
+  }
+  .glass-card {
+    @apply bg-card border border-border rounded-xl shadow-sm;
+  }
+  .glow-blue {
+    box-shadow: 0 0 20px hsl(210 80% 55% / 0.1);
+  }
+  .glow-teal {
+    box-shadow: 0 0 20px hsl(170 60% 45% / 0.1);
+  }
+}
