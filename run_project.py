@@ -7,9 +7,11 @@ def start_process(name, command, cwd=None):
     """Starts a subprocess and returns it, handling basic errors."""
     print(f"[{name}] Starting...")
     try:
-        # Use shell=True for npm on Windows
-        is_shell = command.startswith("npm")
-        # Pipe stdout/stderr so they interleave in the master console, or to DEVNULL if too noisy
+        # If command is a list, do not use shell; otherwise, enable shell for npm on Windows
+        if isinstance(command, (list, tuple)):
+            is_shell = False
+        else:
+            is_shell = command.startswith("npm")
         process = subprocess.Popen(
             command,
             cwd=cwd,
@@ -37,8 +39,10 @@ def main():
     processes = []
     
     # 1. Start Flask API
-    flask_proc = start_process("Flask API", f"{sys.executable} api/app.py", cwd=root_dir)
+    flask_proc = start_process("Flask API", [sys.executable, "api/app.py"], cwd=root_dir)
     if flask_proc: processes.append(("Flask API", flask_proc))
+    # Give Flask a moment to start before launching other services
+    time.sleep(2)
     
     # 2. Start Vitals Simulator (Fallback for Kafka Producer)
     # We replaced the raw Kafka producer with our robust simulator script earlier

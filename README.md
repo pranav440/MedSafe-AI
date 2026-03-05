@@ -66,7 +66,7 @@ MedSafe-AI/
 ├── database/              # SQLite/PostgreSQL schemas and CRUD operations
 ├── drug_checker/          # Fuzzy-matching drug interaction logic
 ├── kafka/                 # Kafka producer/consumer streaming logic
-├── medsafe-insight-main/  # React + Tailwind Frontend (Lovable UI)
+├── medsafe-insight-main/  # React + Tailwind Frontend (MedSafe AI UI)
 ├── models/                # ML Models (Isolation Forest, Autoencoder)
 ├── ocr/                   # Tesseract optical character recognition for prescriptions
 ├── symptom_engine/        # Symptom-to-condition mapping & advice simulation

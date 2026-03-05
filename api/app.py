@@ -37,6 +37,7 @@ from ocr.prescription_reader import extract_medicines, extract_medicines_from_te
 from drug_checker.interaction_checker import check_interactions
 from symptom_engine.symptom_solver import get_symptom_guidance, analyze_side_effects
 
+print("[API] Starting Flask app")
 app = Flask(__name__)
 
 
