@@ -33,3 +33,4 @@ plotly
 requests
 python-dateutil
 gunicorn
+whitenoise

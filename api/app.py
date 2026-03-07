@@ -28,6 +28,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 import config
 
 from flask import Flask, request, jsonify, Response, send_from_directory
+from whitenoise import WhiteNoise
 
 from database.db import (
     init_db, get_latest_vitals, get_history, get_high_alerts, insert_vital
@@ -48,15 +49,22 @@ STATIC_DIR = os.path.join(BASE_DIR, "static")
 if not os.path.exists(STATIC_DIR):
     print(f"[ERROR] Static directory not found at {STATIC_DIR}")
 
-app = Flask(__name__, static_folder=STATIC_DIR, static_url_path="/")
+app = Flask(__name__)
+
+# Industry-standard static serving with WhiteNoise
+app.wsgi_app = WhiteNoise(
+    app.wsgi_app, 
+    root=STATIC_DIR, 
+    index_file=True, 
+    autorefresh=True
+)
 
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
 def serve_react(path):
     """Serve the React frontend and handle routing."""
-    if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
-        return send_from_directory(app.static_folder, path)
-    return send_from_directory(app.static_folder, "index.html")
+    # WhiteNoise handles the files, Flask handles the routing fallback
+    return send_from_directory(STATIC_DIR, "index.html")
 
 
 # ──────────── CORS Support ────────────
@@ -87,8 +95,21 @@ def add_cors_headers(response):
 
 @app.route("/health")
 def health_check():
-    """Dedicated health check for Railway."""
-    return jsonify({"status": "healthy"}), 200
+    """Detailed health check for Railway."""
+    health_status = {
+        "status": "healthy",
+        "database": "connected",
+        "timestamp": datetime.now().isoformat(),
+        "static_dir_exists": os.path.exists(STATIC_DIR)
+    }
+    try:
+        # Quick DB probe
+        get_latest_vitals(limit=1)
+    except Exception as e:
+        health_status["database"] = f"error: {str(e)}"
+        health_status["status"] = "degraded"
+        
+    return jsonify(health_status), 200 if health_status["status"] == "healthy" else 503
 
 
 # ──────────── JSON Serialisation Helper ────────────
