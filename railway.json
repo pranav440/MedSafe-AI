@@ -1,40 +1,10 @@
 {
     "$schema": "https://railway.app/railway.schema.json",
-    "services": {
-        "backend": {
-            "source": {
-                "root": "/"
-            },
-            "build": {
-                "builder": "NIXPACKS"
-            },
-            "deploy": {
-                "startCommand": "gunicorn --bind 0.0.0.0:$PORT api.app:app",
-                "healthcheckPath": "/",
-                "restartPolicyType": "ON_FAILURE"
-            }
-        },
-        "simulator": {
-            "source": {
-                "root": "/"
-            },
-            "deploy": {
-                "startCommand": "python simulator.py",
-                "restartPolicyType": "ALWAYS"
-            }
-        },
-        "frontend": {
-            "source": {
-                "root": "/medsafe-insight-main"
-            },
-            "build": {
-                "builder": "NIXPACKS"
-            },
-            "deploy": {
-                "startCommand": "npm run dev -- --host --port $PORT",
-                "healthcheckPath": "/",
-                "restartPolicyType": "ON_FAILURE"
-            }
-        }
+    "build": {
+        "builder": "DOCKER"
+    },
+    "deploy": {
+        "startCommand": "/app/start.sh",
+        "restartPolicyType": "ON_FAILURE"
     }
 }
