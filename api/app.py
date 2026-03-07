@@ -301,11 +301,11 @@ def health():
     })
 
 
-# ──────────── Entry Point ────────────
+# ──────────── Initialisation ────────────
+print("[API] Initialising database …")
+init_db()
 
+# ──────────── Entry Point ────────────
 if __name__ == "__main__":
-    print("[API] Initialising database …")
-    init_db()
-    
     print(f"[API] Starting Flask on {config.API_HOST}:{config.API_PORT}")
     app.run(host=config.API_HOST, port=config.API_PORT, debug=True)
