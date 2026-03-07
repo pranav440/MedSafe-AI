@@ -20,7 +20,7 @@ export function TopBar() {
         <SidebarTrigger />
         <div className="flex items-center gap-2">
           <div className="h-2 w-2 rounded-full bg-severity-low animate-pulse-glow" />
-          <span className="text-xs text-muted-foreground font-medium">System Online</span>
+          <span className="text-xs text-muted-foreground font-medium">System Online (v7.0-Stable)</span>
         </div>
       </div>
       <Button variant="ghost" size="sm" onClick={handleRefresh} className="text-muted-foreground hover:text-foreground">

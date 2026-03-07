@@ -5,25 +5,49 @@
  * All endpoints, type definitions, and error handling live here.
  */
 
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
+// Definitive API Detection:
+// 1. If VITE_API_URL is set (build-time), use it.
+// 2. If running on localhost, use the local Flask port (5000).
+// 3. Otherwise (Production/Cloud), use relative paths to the same origin.
+const getApiBase = () => {
+  // Check if Vite baked in an API URL
+  const envUrl = import.meta.env.VITE_API_URL;
+  if (envUrl && envUrl.trim().length > 0) return envUrl;
+
+  if (typeof window !== "undefined") {
+    // If we are on your PC, talk to the local Flask (5000)
+    if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+      return "http://localhost:5000";
+    }
+  }
+  // If we are on Render/Cloud, use relative paths
+  return "";
+};
+
+const API_BASE = getApiBase();
+console.log(`[MedSafe AI] Cloud Sync: Using backend at "${API_BASE || "(the same URL)"}"`);
 
 // ─── Generic Fetch Wrapper ───────────────────────────
 async function request<T>(endpoint: string, options?: RequestInit): Promise<T> {
+  // Add a cache-buster in development and production to force fresh data
+  const url = `${API_BASE}${endpoint}${endpoint.includes("?") ? "&" : "?"}t=${Date.now()}`;
+
   try {
-    const res = await fetch(`${API_BASE}${endpoint}`, {
+    const res = await fetch(url, {
       headers: { "Content-Type": "application/json" },
       ...options,
     });
 
     if (!res.ok) {
       const body = await res.json().catch(() => ({}));
-      throw new Error(body.message || `API error ${res.status}`);
+      throw new Error(body.message || `API error ${res.status} at ${url}`);
     }
 
     return res.json();
   } catch (err: any) {
     if (err.message === "Failed to fetch") {
-      throw new Error("Cannot connect to MedSafe AI backend. Make sure the Flask API is running on port 5000.");
+      console.error(`[MedSafe AI] Fatal Network Error: Could not reach ${url}`);
+      throw new Error(`Connection Error: The dashboard cannot reach the data engine at ${url}. Please ensure the Flask backend is running.`);
     }
     throw err;
   }
