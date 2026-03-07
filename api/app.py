@@ -38,7 +38,10 @@ from drug_checker.interaction_checker import check_interactions
 from symptom_engine.symptom_solver import get_symptom_guidance, analyze_side_effects
 
 print("[API] Starting Flask app")
-app = Flask(__name__, static_folder="../static", static_url_path="/")
+# Use absolute path for static folder to ensure gunicorn finds it
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+static_folder = os.path.join(BASE_DIR, "static")
+app = Flask(__name__, static_folder=static_folder, static_url_path="/")
 
 @app.route("/")
 def index():

@@ -4,6 +4,8 @@ WORKDIR /app/frontend
 COPY medsafe-insight-main/package*.json ./
 RUN npm install
 COPY medsafe-insight-main/ ./
+# Use relative paths for the API in production
+ENV VITE_API_URL=""
 RUN npm run build
 
 # Final Stage
@@ -27,13 +29,10 @@ COPY . .
 # Copy built frontend from stage 1
 COPY --from=frontend-builder /app/frontend/dist ./static
 
+# Ensure start script is executable
+RUN chmod +x /app/start.sh
+
 # Expose ports (Railway uses $PORT env var)
 EXPOSE 5000
-
-# Start script
-RUN echo '#!/bin/bash\n\
-python simulator.py &\n\
-gunicorn --bind 0.0.0.0:$PORT api.app:app' > /app/start.sh
-RUN chmod +x /app/start.sh
 
 CMD ["/app/start.sh"]
