@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: medsafe-ai
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 10000 # Render's default, but it will be overridden by Render
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: MEDSAFE_DB_BACKEND
+        value: sqlite
