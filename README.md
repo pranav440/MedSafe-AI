@@ -28,6 +28,19 @@ MedSafe AI provides a comprehensive suite of healthcare safety features:
 - **📋 Side-Effect Reporter:** Uses AI intelligence to process and categorize self-reported adverse drug reactions.
 
 ---
+## 🎥 Project Demo
+
+Watch the working demonstration of MedSafe AI:
+
+https://drive.google.com/file/d/1yrFuXSmpwxVyO8dqQ6BscWw7h-FJOE6f/view
+
+---
+
+## 📄 Project Documentation
+
+Full Project Report:
+
+docs/MedSafe_AI_Project_Report.pdf
 
 ## 🏗 System Architecture
 
