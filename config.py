@@ -27,7 +27,8 @@ EMAIL_RECEIVER = os.getenv("MEDSAFE_EMAIL_RECEIVER", "")
 
 # ──────────────────────── Flask API ────────────────────────────
 API_HOST = os.getenv("MEDSAFE_API_HOST", "0.0.0.0")
-API_PORT = int(os.getenv("MEDSAFE_API_PORT", "5000"))
+# Respect Render's PORT env var if it exists, otherwise use config
+API_PORT = int(os.getenv("PORT", os.getenv("MEDSAFE_API_PORT", "5000")))
 
 # ─────────────────── Anomaly Thresholds ────────────────────────
 # Severity classification based on anomaly score (0-1 scale)

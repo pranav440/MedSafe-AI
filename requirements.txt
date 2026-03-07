@@ -32,3 +32,4 @@ plotly
 # Utilities
 requests
 python-dateutil
+gunicorn
