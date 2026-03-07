@@ -33,6 +33,6 @@ COPY --from=frontend-builder /app/frontend/dist ./static
 RUN chmod +x /app/start.sh
 
 # Expose ports (Railway uses $PORT env var)
-EXPOSE 5000
+ENV PYTHONUNBUFFERED=1
 
 CMD ["/app/start.sh"]
