@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
@@ -91,6 +91,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', system-ui, sans-serif;
@@ -103,22 +104,27 @@
     background-color: hsl(var(--severity-low) / 0.12);
     border-color: hsl(var(--severity-low) / 0.3);
   }
+
   .severity-medium {
     color: hsl(var(--severity-medium));
     background-color: hsl(var(--severity-medium) / 0.12);
     border-color: hsl(var(--severity-medium) / 0.3);
   }
+
   .severity-high {
     color: hsl(var(--severity-high));
     background-color: hsl(var(--severity-high) / 0.12);
     border-color: hsl(var(--severity-high) / 0.3);
   }
+
   .glass-card {
     @apply bg-card border border-border rounded-xl shadow-sm;
   }
+
   .glow-blue {
     box-shadow: 0 0 20px hsl(210 80% 55% / 0.1);
   }
+
   .glow-teal {
     box-shadow: 0 0 20px hsl(170 60% 45% / 0.1);
   }

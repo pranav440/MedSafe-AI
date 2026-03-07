@@ -10,18 +10,15 @@
 // 2. If running on localhost, use the local Flask port (5000).
 // 3. Otherwise (Production/Cloud), use relative paths to the same origin.
 const getApiBase = () => {
-  // Check if Vite baked in an API URL
+  // 1. If we are in production (Render), always use relative paths
+  if (import.meta.env.PROD) return "";
+
+  // 2. If VITE_API_URL is set (local dev override), use it
   const envUrl = import.meta.env.VITE_API_URL;
   if (envUrl && envUrl.trim().length > 0) return envUrl;
 
-  if (typeof window !== "undefined") {
-    // If we are on your PC, talk to the local Flask (5000)
-    if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
-      return "http://localhost:5000";
-    }
-  }
-  // If we are on Render/Cloud, use relative paths
-  return "";
+  // 3. Default to local Flask in development
+  return "http://localhost:5000";
 };
 
 const API_BASE = getApiBase();
