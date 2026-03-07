@@ -338,7 +338,12 @@ def health_api():
 def serve_react(path):
     """Serve the React frontend and handle routing."""
     # WhiteNoise handles the files, Flask handles the routing fallback
-    return send_from_directory(STATIC_DIR, "index.html")
+    response = send_from_directory(STATIC_DIR, "index.html")
+    # Force the browser to never cache the main page so it always loads the latest build
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "0"
+    return response
 
 
 # ──────────── Initialisation ────────────
