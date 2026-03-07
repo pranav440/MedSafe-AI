@@ -1,0 +1,16 @@
+.git
+.gitignore
+node_modules
+dist
+medsafe-insight-main/node_modules
+medsafe-insight-main/dist
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.env
+.env.local
+.venv
+venv
+medsafe.db
+*.db

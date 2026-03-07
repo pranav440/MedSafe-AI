@@ -29,10 +29,8 @@ COPY . .
 # Copy built frontend from stage 1
 COPY --from=frontend-builder /app/frontend/dist ./static
 
-# Ensure start script is executable
-RUN chmod +x /app/start.sh
-
 # Expose ports (Railway uses $PORT env var)
 ENV PYTHONUNBUFFERED=1
 
-CMD ["/app/start.sh"]
+# Start Flask directly (Simulator starts as a thread inside Flask)
+CMD gunicorn --bind 0.0.0.0:$PORT --workers 1 --timeout 120 api.app:app

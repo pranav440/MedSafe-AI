@@ -27,7 +27,7 @@ from datetime import datetime
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 import config
 
-from flask import Flask, request, jsonify, Response
+from flask import Flask, request, jsonify, Response, send_from_directory
 
 from database.db import (
     init_db, get_latest_vitals, get_history, get_high_alerts, insert_vital
@@ -37,21 +37,26 @@ from ocr.prescription_reader import extract_medicines, extract_medicines_from_te
 from drug_checker.interaction_checker import check_interactions
 from symptom_engine.symptom_solver import get_symptom_guidance, analyze_side_effects
 
+import threading
+from simulator import run_simulator
+
 print("[API] Starting Flask app")
-# Use absolute path for static folder to ensure gunicorn finds it
+# Robust absolute path for static files
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-static_folder = os.path.join(BASE_DIR, "static")
-app = Flask(__name__, static_folder=static_folder, static_url_path="/")
+STATIC_DIR = os.path.join(BASE_DIR, "static")
 
-@app.route("/")
-def index():
-    """Serve the React frontend."""
-    return app.send_static_file("index.html")
+if not os.path.exists(STATIC_DIR):
+    print(f"[ERROR] Static directory not found at {STATIC_DIR}")
 
-@app.errorhandler(404)
-def not_found(e):
-    """Fallback for React Router."""
-    return app.send_static_file("index.html")
+app = Flask(__name__, static_folder=STATIC_DIR, static_url_path="/")
+
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+def serve_react(path):
+    """Serve the React frontend and handle routing."""
+    if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
+        return send_from_directory(app.static_folder, path)
+    return send_from_directory(app.static_folder, "index.html")
 
 
 # ──────────── CORS Support ────────────
@@ -314,6 +319,10 @@ def health_api():
 # ──────────── Initialisation ────────────
 print("[API] Initialising database …")
 init_db()
+
+print("[API] Starting background Vitals Simulator thread …")
+sim_thread = threading.Thread(target=run_simulator, daemon=True)
+sim_thread.start()
 
 # ──────────── Entry Point ────────────
 if __name__ == "__main__":
