@@ -59,12 +59,7 @@ app.wsgi_app = WhiteNoise(
     autorefresh=True
 )
 
-@app.route("/", defaults={"path": ""})
-@app.route("/<path:path>")
-def serve_react(path):
-    """Serve the React frontend and handle routing."""
-    # WhiteNoise handles the files, Flask handles the routing fallback
-    return send_from_directory(STATIC_DIR, "index.html")
+
 
 
 # ──────────── CORS Support ────────────
@@ -335,6 +330,13 @@ def health_api():
             "POST /side_effect_report",
         ],
     })
+
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+def serve_react(path):
+    """Serve the React frontend and handle routing."""
+    # WhiteNoise handles the files, Flask handles the routing fallback
+    return send_from_directory(STATIC_DIR, "index.html")
 
 
 # ──────────── Initialisation ────────────
