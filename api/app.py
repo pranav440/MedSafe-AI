@@ -46,18 +46,20 @@ print("[API] Starting Flask app")
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_DIR = os.path.join(BASE_DIR, "static")
 
-if not os.path.exists(STATIC_DIR):
-    print(f"[ERROR] Static directory not found at {STATIC_DIR}")
-
 app = Flask(__name__)
 
 # Industry-standard static serving with WhiteNoise
+# We disable autorefresh in production for speed
 app.wsgi_app = WhiteNoise(
     app.wsgi_app, 
     root=STATIC_DIR, 
-    index_file=True, 
-    autorefresh=True
+    index_file=True
 )
+
+@app.before_request
+def log_request_detailed():
+    """Verbose logging for Render debugging."""
+    print(f"[DEBUG] {request.method} {request.path} (Host: {request.host})")
 
 
 
