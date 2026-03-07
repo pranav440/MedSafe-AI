@@ -16,7 +16,6 @@ psycopg2-binary
 pandas
 numpy
 scikit-learn
-tensorflow
 opencv-python-headless
 
 # OCR
