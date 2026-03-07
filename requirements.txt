@@ -19,16 +19,16 @@ scikit-learn
 opencv-python-headless
 
 # OCR
-pytesseract==0.3.13
-Pillow==11.1.0
+pytesseract
+Pillow
 
 # Fuzzy string matching
-rapidfuzz==3.11.0
+rapidfuzz
 
 # Plotting
-matplotlib==3.10.0
-plotly==5.24.1
+matplotlib
+plotly
 
 # Utilities
-requests==2.32.3
-python-dateutil==2.9.0
+requests
+python-dateutil
