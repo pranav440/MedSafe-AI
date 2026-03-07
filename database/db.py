@@ -38,7 +38,8 @@ def get_connection():
             password=config.DB_PASSWORD,
         )
     else:
-        conn = sqlite3.connect(SQLITE_PATH)
+        # Enable timeout and multi-process support for SQLite
+        conn = sqlite3.connect(SQLITE_PATH, timeout=30.0, check_same_thread=False)
         conn.row_factory = sqlite3.Row  # dict-like access
         return conn
 

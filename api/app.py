@@ -67,6 +67,11 @@ def cors_preflight(path=""):
     return resp
 
 
+@app.before_request
+def log_request():
+    """Log incoming requests for debugging."""
+    print(f"[API] {request.method} {request.path}")
+
 @app.after_request
 def add_cors_headers(response):
     """Allow cross-origin requests from the frontend."""
@@ -74,6 +79,11 @@ def add_cors_headers(response):
     response.headers["Access-Control-Allow-Headers"] = "Content-Type"
     response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
     return response
+
+@app.route("/health")
+def health_check():
+    """Dedicated health check for Railway."""
+    return jsonify({"status": "healthy"}), 200
 
 
 # ──────────── JSON Serialisation Helper ────────────
@@ -282,9 +292,9 @@ def api_side_effect_report():
 #  HEALTH CHECK
 # ══════════════════════════════════════════════════
 
-@app.route("/", methods=["GET"])
-def health():
-    """Simple health check."""
+@app.route("/api/health", methods=["GET"])
+def health_api():
+    """Simple API health check."""
     return jsonify({
         "service": "MedSafe AI API",
         "status": "running",
