@@ -38,7 +38,17 @@ from drug_checker.interaction_checker import check_interactions
 from symptom_engine.symptom_solver import get_symptom_guidance, analyze_side_effects
 
 print("[API] Starting Flask app")
-app = Flask(__name__)
+app = Flask(__name__, static_folder="../static", static_url_path="/")
+
+@app.route("/")
+def index():
+    """Serve the React frontend."""
+    return app.send_static_file("index.html")
+
+@app.errorhandler(404)
+def not_found(e):
+    """Fallback for React Router."""
+    return app.send_static_file("index.html")
 
 
 # ──────────── CORS Support ────────────
