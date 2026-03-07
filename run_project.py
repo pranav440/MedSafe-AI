@@ -51,8 +51,28 @@ def main():
     consumer_proc = start_process("Kafka Consumer", f"{sys.executable} kafka/consumer.py", cwd=root_dir)
     if consumer_proc: processes.append(("Kafka Consumer", consumer_proc))
     
-    # 4. Start React Frontend
-    frontend_proc = start_process("Frontend UI", "npm run dev", cwd=frontend_dir)
+    # 4. Start React Frontend with Stability Engine (v8.5)
+    # 4a. Definitive Cache Purge (Fixes the @import Vite error)
+    vite_cache = os.path.join(frontend_dir, "node_modules", ".vite")
+    if os.path.exists(vite_cache):
+        print("[System] Cleaning Vite cache for fresh build...")
+        try:
+            import shutil
+            shutil.rmtree(vite_cache, ignore_errors=True)
+        except: pass
+
+    # 4b. Start with explicit local environment
+    env = os.environ.copy()
+    env["VITE_API_URL"] = "http://127.0.0.1:5000"
+    
+    frontend_proc = subprocess.Popen(
+        "npm run dev",
+        cwd=frontend_dir,
+        shell=True,
+        env=env,
+        stdout=sys.stdout,
+        stderr=sys.stderr
+    )
     if frontend_proc: processes.append(("Frontend UI", frontend_proc))
     
     print("\n[System] All configured services have been launched.")

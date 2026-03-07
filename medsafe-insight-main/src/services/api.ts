@@ -17,8 +17,8 @@ const getApiBase = () => {
   const envUrl = import.meta.env.VITE_API_URL;
   if (envUrl && envUrl.trim().length > 0) return envUrl;
 
-  // 3. Default to local Flask in development
-  return "http://localhost:5000";
+  // 3. Default to local Flask in development (127.0.0.1 is more stable on Windows)
+  return "http://127.0.0.1:5000";
 };
 
 const API_BASE = getApiBase();
