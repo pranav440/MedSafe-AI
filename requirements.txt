@@ -3,21 +3,21 @@
 # ─────────────────────────────────────────────
 
 # Web framework & Dashboard
-Flask==3.1.0
-streamlit==1.41.1
+Flask
+streamlit
 
 # Kafka streaming
-kafka-python==2.0.2
+kafka-python-ng
 
 # PostgreSQL
-psycopg2-binary==2.9.10
+psycopg2-binary
 
 # Data science & ML
-pandas==2.2.3
-numpy==1.26.4
-scikit-learn==1.6.1
-tensorflow==2.18.0
-opencv-python==4.11.0.86
+pandas
+numpy
+scikit-learn
+tensorflow
+opencv-python-headless
 
 # OCR
 pytesseract==0.3.13
