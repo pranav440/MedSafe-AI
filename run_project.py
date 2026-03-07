@@ -44,10 +44,8 @@ def main():
     # Give Flask a moment to start before launching other services
     time.sleep(2)
     
-    # 2. Start Vitals Simulator (Fallback for Kafka Producer)
-    # We replaced the raw Kafka producer with our robust simulator script earlier
-    sim_proc = start_process("Vitals Simulator", f"{sys.executable} simulator.py", cwd=root_dir)
-    if sim_proc: processes.append(("Vitals Simulator", sim_proc))
+    # 2. Vitals Simulator is now integrated directly into the Flask API as a thread.
+    # No separate process needed.
     
     # 3. Start Kafka Consumer (If available/configured)
     consumer_proc = start_process("Kafka Consumer", f"{sys.executable} kafka/consumer.py", cwd=root_dir)

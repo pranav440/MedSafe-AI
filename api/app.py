@@ -18,7 +18,6 @@ Usage:
 """
 
 import sys
-import sys
 import os
 import json
 import tempfile
@@ -48,18 +47,22 @@ STATIC_DIR = os.path.join(BASE_DIR, "static")
 
 app = Flask(__name__)
 
-# Industry-standard static serving with WhiteNoise
-# We disable autorefresh in production for speed
-app.wsgi_app = WhiteNoise(
-    app.wsgi_app, 
-    root=STATIC_DIR, 
-    index_file=True
-)
+# Industry-standard static serving with WhiteNoise (Cloud only)
+if os.path.exists(STATIC_DIR):
+    print(f"[API] Static directory found at {STATIC_DIR}. Enabling WhiteNoise.")
+    app.wsgi_app = WhiteNoise(
+        app.wsgi_app, 
+        root=STATIC_DIR, 
+        index_file=True
+    )
+else:
+    print(f"[API] Static directory NOT found. Skipping WhiteNoise (Local Dev Mode).")
 
 @app.before_request
 def log_request_detailed():
-    """Verbose logging for Render debugging."""
-    print(f"[DEBUG] {request.method} {request.path} (Host: {request.host})")
+    """Verbose logging for debugging."""
+    if not request.path.startswith("/static"):
+        print(f"[DEBUG] {request.method} {request.path} (Host: {request.host})")
 
 
 
