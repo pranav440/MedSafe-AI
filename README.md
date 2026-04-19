@@ -15,7 +15,7 @@
 
 ---
 
-## 🌟 Features
+## 🌟 Features!
 
 MedSafe AI provides a comprehensive suite of healthcare safety features:
 - **🫀 Real-Time Vitals Monitoring:** Streams patient telemetry data via Kafka.
